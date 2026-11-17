@@ -479,4 +479,38 @@ export const opportunities: Opportunity[] = [
     featured: true,
     participants: 30
   },
+  {
+    id: "o10",
+    title: "Sphero Robotics Workshop Volunteer",
+    description:
+      "Introduce high-school students to robotics and programming by guiding them as they pair Sphero robotic balls with a tablet or smartphone over Bluetooth, create block-based programs for movement, speed, direction, and lights, and connect those ideas to JavaScript or Python.",
+    category: "Robotics",
+    ageGroup: "14-18",
+    format: "In-person",
+    location: "Ottawa",
+    duration: "One workshop session",
+    impact:
+      "Give students a hands-on introduction to programming logic, debugging, teamwork, and the connection between software and physical actions.",
+    featured: true,
+    activityFlow: [
+      "Introduce robots and the Sphero kits, explaining how software can control a physical device.",
+      "Pair students in small groups so they can share a Sphero and a tablet or smartphone.",
+      "Connect each Sphero robot to the companion app using Bluetooth.",
+      "Use visual blocks to program movement, speed, direction, and lights.",
+      "Complete a challenge such as an obstacle course, maze, or team race.",
+      "Experiment with the code, troubleshoot mistakes, and improve each solution.",
+    ],
+    volunteerResponsibilities: [
+      "Introduce the Sphero kits and explain core programming concepts.",
+      "Guide student groups as they connect, program, and test their robots.",
+      "Help students debug their programs and reason about cause and effect.",
+      "Relate block-based coding to JavaScript or Python concepts as students are ready.",
+    ],
+    learningObjectives: [
+      "Understand programming sequences, loops, and conditions.",
+      "Develop problem-solving and debugging skills.",
+      "Practise teamwork and creative thinking.",
+      "Understand how software instructions translate into physical actions.",
+    ],
+  },
 ];

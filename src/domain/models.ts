@@ -83,6 +83,9 @@ export interface Opportunity {
   impact: string;
   featured: boolean;
   participants?: number;
+  activityFlow?: string[];
+  volunteerResponsibilities?: string[];
+  learningObjectives?: string[];
 }
 
 export interface OpportunityFiltersState {

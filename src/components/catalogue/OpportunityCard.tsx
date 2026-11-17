@@ -31,6 +31,13 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
     [opportunity.location]
   );
 
+  const volunteerResponsibilities = opportunity.volunteerResponsibilities ?? [
+    "Share your experience and STEM career journey",
+    "Help students understand real-world applications",
+    "Support awareness of STEM pathways and future careers",
+    "Represent Thales in a positive and engaging way",
+  ];
+
   function handleSignupSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSignedUp(true);
@@ -67,9 +74,11 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
           <p>
             <span className="text-white">Duration:</span> {opportunity.duration}
           </p>
-          <p>
-            <span className="text-white">Participants:</span> {opportunity.participants}
-          </p>
+          {opportunity.participants !== undefined && (
+            <p>
+              <span className="text-white">Participants:</span> {opportunity.participants}
+            </p>
+          )}
         </div>
 
         <div className="mt-4 rounded-lg border border-gray-700 bg-gray-800 p-3">
@@ -87,7 +96,7 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
 
       {showDetails && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/70 p-4">
-          <div className="w-full max-w-2xl rounded-lg border border-gray-700 bg-gray-800 p-6 shadow-lg">
+          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg border border-gray-700 bg-gray-800 p-6 shadow-lg">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <BadgePill active>{opportunity.category}</BadgePill>
@@ -115,7 +124,9 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
                 <div className="mt-3 space-y-2 text-sm text-gray-300">
                   <p><span className="text-white">Format:</span> {opportunity.format}</p>
                   <p><span className="text-white">Age group:</span> {opportunity.ageGroup}</p>
-                  <p><span className="text-white">Participants:</span> {opportunity.participants}</p>
+                  {opportunity.participants !== undefined && (
+                    <p><span className="text-white">Participants:</span> {opportunity.participants}</p>
+                  )}
                   <p><span className="text-white">Duration:</span> {opportunity.duration}</p>
                   <p><span className="text-white">Location:</span> {opportunity.location}</p>
                   <p><span className="text-white">Venue:</span> {address}</p>
@@ -126,14 +137,35 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
                 <p className="text-xs uppercase tracking-[0.15em] text-gray-400">
                   What you will do
                 </p>
-                <div className="mt-3 space-y-2 text-sm text-gray-300">
-                  <p>• Share your experience and STEM career journey</p>
-                  <p>• Help students understand real-world applications</p>
-                  <p>• Support awareness of STEM pathways and future careers</p>
-                  <p>• Represent Thales in a positive and engaging way</p>
-                </div>
+                <ul className="mt-3 space-y-2 text-sm text-gray-300">
+                  {volunteerResponsibilities.map((responsibility) => (
+                    <li key={responsibility}>• {responsibility}</li>
+                  ))}
+                </ul>
               </div>
             </div>
+
+            {opportunity.activityFlow && (
+              <div className="mt-4 rounded-lg border border-gray-700 bg-gray-800 p-4">
+                <p className="text-xs uppercase tracking-[0.15em] text-gray-400">Workshop flow</p>
+                <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-gray-300">
+                  {opportunity.activityFlow.map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            {opportunity.learningObjectives && (
+              <div className="mt-4 rounded-lg border border-gray-700 bg-gray-800 p-4">
+                <p className="text-xs uppercase tracking-[0.15em] text-gray-400">Learning objectives</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-300">
+                  {opportunity.learningObjectives.map((objective) => (
+                    <li key={objective}>{objective}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="mt-4 rounded-lg border border-gray-700 bg-gray-800 p-4">
               <p className="text-xs uppercase tracking-[0.15em] text-gray-400">Impact</p>
