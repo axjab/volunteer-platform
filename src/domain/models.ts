@@ -83,6 +83,7 @@ export interface Opportunity {
   duration: string;
   impact: string;
   featured: boolean;
+  tags: string[];
   participants?: number;
   activityFlow?: string[];
   volunteerResponsibilities?: string[];

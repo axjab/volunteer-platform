@@ -9,6 +9,32 @@ interface OpportunityCardProps {
   opportunity: Opportunity;
 }
 
+const TAG_COLOURS = [
+  "border-sky-400/30 bg-sky-400/10 text-sky-300",
+  "border-violet-400/30 bg-violet-400/10 text-violet-300",
+  "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
+  "border-amber-400/30 bg-amber-400/10 text-amber-300",
+  "border-rose-400/30 bg-rose-400/10 text-rose-300",
+  "border-cyan-400/30 bg-cyan-400/10 text-cyan-300",
+] as const;
+
+function OpportunityTags({ tags }: { tags: string[] }) {
+  if (tags.length === 0) return null;
+
+  return (
+    <div className="mt-3 flex flex-wrap gap-2" aria-label="Opportunity tags">
+      {tags.map((tag, index) => (
+        <span
+          key={tag}
+          className={`rounded-full border px-2.5 py-1 text-[11px] font-medium ${TAG_COLOURS[index % TAG_COLOURS.length]}`}
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function getAddressForLocation(location: string, venue?: string) {
   if (location === "Remote") {
     return "Online session link shared after registration";
@@ -63,6 +89,7 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
 
         <h3 className="mt-4 text-xl font-semibold text-white">{opportunity.title}</h3>
         <p className="mt-3 text-sm text-gray-300">{opportunity.description}</p>
+        <OpportunityTags tags={opportunity.tags} />
 
         <div className="mt-4 grid gap-2 text-sm text-gray-300">
           <p>
@@ -115,6 +142,7 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
             <p className="mt-4 text-sm leading-6 text-gray-300">
               {opportunity.description}
             </p>
+            <OpportunityTags tags={opportunity.tags} />
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-gray-700 bg-gray-800 p-4">
