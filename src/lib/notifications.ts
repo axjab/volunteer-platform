@@ -22,7 +22,6 @@ export class NotificationService {
     platformNotifications: true,
     emailNotifications: false,
     locations: [],
-    categories: [],
     formats: [],
     frequency: 'immediate'
   };
