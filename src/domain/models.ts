@@ -79,6 +79,7 @@ export interface Opportunity {
   ageGroup: string;
   format: OpportunityFormat;
   location: Location;
+  venue?: string;
   duration: string;
   impact: string;
   featured: boolean;

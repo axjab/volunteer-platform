@@ -9,12 +9,12 @@ interface OpportunityCardProps {
   opportunity: Opportunity;
 }
 
-function getAddressForLocation(location: string) {
+function getAddressForLocation(location: string, venue?: string) {
   if (location === "Remote") {
     return "Online session link shared after registration";
   }
 
-  return `${location} STEM Learning Centre`;
+  return venue ?? "Venue details shared after registration";
 }
 
 export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
@@ -27,8 +27,8 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
   const [notes, setNotes] = useState("");
 
   const address = useMemo(
-    () => getAddressForLocation(opportunity.location),
-    [opportunity.location]
+    () => getAddressForLocation(opportunity.location, opportunity.venue),
+    [opportunity.location, opportunity.venue]
   );
 
   const volunteerResponsibilities = opportunity.volunteerResponsibilities ?? [

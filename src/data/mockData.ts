@@ -488,6 +488,7 @@ export const opportunities: Opportunity[] = [
     ageGroup: "14-18",
     format: "In-person",
     location: "Ottawa",
+    venue: "To be confirmed",
     duration: "One workshop session",
     impact:
       "Give students a hands-on introduction to programming logic, debugging, teamwork, and the connection between software and physical actions.",
