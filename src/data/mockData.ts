@@ -351,6 +351,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Support weekly coding workshops for students learning web fundamentals and computational thinking.",
     category: "Coding",
+    tags: ["Programming","Web Development","JavaScript","Mentoring","Computational Thinking"],
     ageGroup: "11-14",
     format: "Hybrid",
     location: "Ottawa",
@@ -366,6 +367,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Guide youth teams preparing for a beginner robotics competition using sensors and programmable kits.",
     category: "Robotics",
+    tags: ["Robotics","Engineering","Sensors","Teamwork","Competition"],
     ageGroup: "13-16",
     format: "In-person",
     location: "Calgary",
@@ -381,6 +383,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Deliver an engaging talk on online safety, cyber awareness, and digital citizenship for secondary students.",
     category: "Cybersecurity",
+    tags: ["Cybersecurity","Digital Safety","Online Safety","Public Speaking","Digital Citizenship"],
     ageGroup: "12-16",
     format: "Virtual",
     location: "Remote",
@@ -396,6 +399,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Join a panel sharing personal career journeys in engineering, data, AI, and technology roles.",
     category: "General STEM",
+    tags: ["STEM Careers","Career Mentoring","Public Speaking","Engineering","Technology"],
     ageGroup: "14-18",
     format: "Virtual",
     location: "Remote",
@@ -411,6 +415,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Help small groups of students improve confidence through practical problem-solving sessions.",
     category: "Mathematics",
+    tags: ["Mathematics","Problem Solving","Mentoring","Numeracy"],
     ageGroup: "10-13",
     format: "In-person",
     location: "Ottawa",
@@ -425,6 +430,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Lead an introductory workshop on AI concepts, ethics, and real-world social impact examples.",
     category: "AI",
+    tags: ["Artificial Intelligence","AI Ethics","Innovation","Workshop Facilitation","Critical Thinking"],
     ageGroup: "15-18",
     format: "Hybrid",
     location: "Toronto",
@@ -440,6 +446,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Support a youth challenge where teams design sustainable transport or energy solutions.",
     category: "Engineering",
+    tags: ["Engineering","Design Thinking","Sustainability","Teamwork","Innovation"],
     ageGroup: "13-17",
     format: "In-person",
     location: "Montreal",
@@ -455,6 +462,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Help run engaging science experiments and demonstrations for primary school students.",
     category: "Science",
+    tags: ["Science","Experiments","Demonstrations","STEM Outreach"],
     ageGroup: "8-11",
     format: "In-person",
     location: "Toronto",
@@ -470,6 +478,7 @@ export const opportunities: Opportunity[] = [
     description:
       "Sign up for a cybersecurity workshop, create a STEM Ambassador profile, and let the partner organisation coordinate the schools and classrooms. You simply show up, share your experience, and help students understand how cybersecurity protects critical systems, how STEM solves real-world challenges, and what a career at Thales could look like.",
     category: "Cybersecurity",
+    tags: ["Cybersecurity","STEM Ambassador","Public Speaking","Cyber Awareness","Mentoring"],
     ageGroup: "13-17",
     format: "In-person",
     location: "Ottawa",
@@ -478,5 +487,41 @@ export const opportunities: Opportunity[] = [
       "Inspire students through a real-world introduction to cybersecurity, critical systems protection, and STEM careers at Thales.",
     featured: true,
     participants: 30
+  },
+  {
+    id: "o10",
+    title: "Sphero Robotics Workshop Volunteer",
+    description:
+      "Introduce high-school students to robotics and programming by guiding them as they pair Sphero robotic balls with a tablet or smartphone over Bluetooth, create block-based programs for movement, speed, direction, and lights, and connect those ideas to JavaScript or Python.",
+    category: "Robotics",
+    tags: ["Programming","Coding","Robotics","Block Coding","JavaScript","Python","Debugging","Teamwork"],
+    ageGroup: "14-18",
+    format: "In-person",
+    location: "Ottawa",
+    venue: "To be confirmed",
+    duration: "One workshop session",
+    impact:
+      "Give students a hands-on introduction to programming logic, debugging, teamwork, and the connection between software and physical actions.",
+    featured: true,
+    activityFlow: [
+      "Introduce robots and the Sphero kits, explaining how software can control a physical device.",
+      "Pair students in small groups so they can share a Sphero and a tablet or smartphone.",
+      "Connect each Sphero robot to the companion app using Bluetooth.",
+      "Use visual blocks to program movement, speed, direction, and lights.",
+      "Complete a challenge such as an obstacle course, maze, or team race.",
+      "Experiment with the code, troubleshoot mistakes, and improve each solution.",
+    ],
+    volunteerResponsibilities: [
+      "Introduce the Sphero kits and explain core programming concepts.",
+      "Guide student groups as they connect, program, and test their robots.",
+      "Help students debug their programs and reason about cause and effect.",
+      "Relate block-based coding to JavaScript or Python concepts as students are ready.",
+    ],
+    learningObjectives: [
+      "Understand programming sequences, loops, and conditions.",
+      "Develop problem-solving and debugging skills.",
+      "Practise teamwork and creative thinking.",
+      "Understand how software instructions translate into physical actions.",
+    ],
   },
 ];

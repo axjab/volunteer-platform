@@ -5,7 +5,7 @@ import Card from "../components/ui/Card";
 import EmptyState from "../components/ui/EmptyState";
 import SectionHeader from "../components/ui/SectionHeader";
 import NotificationManager from "../components/notifications/NotificationManager";
-import { LOCATIONS, OPPORTUNITY_FORMATS } from "../domain/constants";
+import { LOCATIONS, OPPORTUNITY_FORMATS, STEM_CATEGORIES } from "../domain/constants";
 import type { OpportunityFiltersState } from "../domain/models";
 import { opportunities } from "../data/mockData";
 import { filterOpportunities } from "../lib/opportunities";
@@ -32,7 +32,7 @@ export default function CataloguePage() {
         <OpportunityFilters
           filters={filters}
           onChange={setFilters}
-          categories={["All"]}
+          categories={["All", ...STEM_CATEGORIES]}
           formats={["All", ...OPPORTUNITY_FORMATS]}
           locations={["All", ...LOCATIONS]}
         />

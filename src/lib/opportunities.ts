@@ -11,7 +11,8 @@ export function filterOpportunities(
       query.length === 0 ||
       opp.title.toLowerCase().includes(query) ||
       opp.description.toLowerCase().includes(query) ||
-      opp.category.toLowerCase().includes(query);
+      opp.category.toLowerCase().includes(query) ||
+      opp.tags.some((tag) => tag.toLowerCase().includes(query));
 
     const matchesCategory =
       filters.category === "All" || opp.category === filters.category;

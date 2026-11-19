@@ -79,10 +79,15 @@ export interface Opportunity {
   ageGroup: string;
   format: OpportunityFormat;
   location: Location;
+  venue?: string;
   duration: string;
   impact: string;
   featured: boolean;
+  tags: string[];
   participants?: number;
+  activityFlow?: string[];
+  volunteerResponsibilities?: string[];
+  learningObjectives?: string[];
 }
 
 export interface OpportunityFiltersState {

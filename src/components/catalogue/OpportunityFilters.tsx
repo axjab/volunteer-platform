@@ -20,18 +20,47 @@ export default function OpportunityFilters({
   categories,
   formats,
   locations,
-}: OpportunityFiltersProps){
+}: OpportunityFiltersProps) {
   return (
     <div className="grid gap-4 lg:grid-cols-4">
-      <input
-        value={filters.search}
-        onChange={(e) => onChange({ ...filters, search: e.target.value })}
-        className="rounded-2xl border border-gray-700 bg-gray-800 px-4 py-3 outline-none placeholder:text-gray-500"
-        placeholder="Search by title, category, or keyword"
+      <div className="flex flex-col gap-2">
+        <label
+          htmlFor="opportunity-search"
+          className="text-sm font-medium text-gray-300"
+        >
+          Search opportunities
+        </label>
+        <input
+          id="opportunity-search"
+          type="search"
+          value={filters.search}
+          onChange={(e) => onChange({ ...filters, search: e.target.value })}
+          className="w-full rounded-2xl border border-gray-700 bg-gray-800 px-4 py-3 text-white outline-none placeholder:text-gray-500"
+          placeholder="Search by title, category, or keyword"
+        />
+      </div>
+
+      <SelectField
+        id="opportunity-category"
+        label="Category"
+        value={filters.category}
+        options={categories}
+        onChange={(value) => onChange({ ...filters, category: value })}
       />
-      <SelectField value={filters.category} options={categories} onChange={(value) => onChange({ ...filters, category: value })} />
-      <SelectField value={filters.format} options={formats} onChange={(value) => onChange({ ...filters, format: value })} />
-      <SelectField value={filters.location} options={locations} onChange={(value) => onChange({ ...filters, location: value })} />
+      <SelectField
+        id="opportunity-format"
+        label="Format"
+        value={filters.format}
+        options={formats}
+        onChange={(value) => onChange({ ...filters, format: value })}
+      />
+      <SelectField
+        id="opportunity-location"
+        label="Location"
+        value={filters.location}
+        options={locations}
+        onChange={(value) => onChange({ ...filters, location: value })}
+      />
     </div>
   );
 }
